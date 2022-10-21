@@ -61,23 +61,24 @@ Inicio
    fimpara
 
    para i de 0 ate N-1 faca
-         se (vetMinutos[i] > 90) entao
-            soma <- (vetMinutos[i]-90)* VetAssinatura[vetTipo[i],1]
-            ValorDaConta[i] <- soma + VetAssinatura[vetTipo[i],0]
-         senao
-            ValorDaConta[i] <- VetAssinatura[vetTipo[i],0]
-         fimse
-      fimpara
-      
-      escreval()
-      
-      escreval("RELATÓRIO DE CLIENTES:")
-      
-      escreval()
+      ValorDaConta[i] <- 0
+      se (vetMinutos[i] > 90) entao
+         soma <- (vetMinutos[i]-90)* VetAssinatura[vetTipo[i],1]
+         ValorDaConta[i] <- soma + VetAssinatura[vetTipo[i],0]
+      senao
+         ValorDaConta[i] <- VetAssinatura[vetTipo[i],0]
+      fimse
+   fimpara
+
+   escreval()
+
+   escreval("RELATÓRIO DE CLIENTES:")
+
+   escreval()
 
    para i de 0 ate N-1 faca
-         escreva(vetName[i],", ",vetTelefone[i],", Tipo",vetTipo[i])
-         escreval(", Minutos:",vetMinutos[i],", Conta = R$ ",ValorDaConta[i]:5:2)
+      escreva(vetName[i],", ",vetTelefone[i],", Tipo",vetTipo[i])
+      escreval(", Minutos:",vetMinutos[i],", Conta = R$ ",ValorDaConta[i]:5:2)
    fimpara
 
 
